@@ -2,12 +2,12 @@
 
 Summary:	obconf-qt
 Name:		obconf-qt
-Version:	0.1.0
-Release:	0.1
+Version:	0.11.0
+Release:	1
 License:	GPLv2 and LGPL-2.1+
 Group:		X11/Libraries
-Source0:	http://lxqt.org/downloads/obconf-qt/0.1.0/%{name}-%{version}.tar.xz
-# Source0-md5:	d08c292eae465b21a1635d1b4b5372d6
+Source0:	http://downloads.lxqt.org/obconf-qt/%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	12de451f5ab442bf6174ea285f2670e9
 URL:		http://www.lxqt.org/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
@@ -22,12 +22,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 obconf-qt
 
 %prep
-%setup -q -c %{name}-%{version}
+%setup -q
 
 %build
 install -d build
 cd build
 %cmake \
+	-DPULL_TRANSLATIONS:BOOL=OFF \
 	../
 
 %{__make}
@@ -45,4 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/obconf-qt
 %{_desktopdir}/obconf-qt.desktop
-%{_pixmapsdir}/obconf-qt.png
+%{_iconsdir}/hicolor/48x48/apps/obconf-qt.png
