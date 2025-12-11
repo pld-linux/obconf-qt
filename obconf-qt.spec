@@ -15,6 +15,7 @@ BuildRequires:	Qt6Gui-devel >= %{qtver}
 BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.5.0
 BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	lxqt-build-tools >= 2.3.0
 BuildRequires:	openbox-devel >= 1:3.5
 BuildRequires:	qt6-linguist >= %{qtver}
 BuildRequires:	xz-devel
