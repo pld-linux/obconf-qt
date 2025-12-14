@@ -4,7 +4,7 @@ Summary:	Qt port of a configuration editor for OpenBox window manager
 Summary(pl.UTF-8):	Port Qt edytora konfiguracji dla menedżera okien OpenBox
 Name:		obconf-qt
 Version:	0.16.6
-Release:	1
+Release:	2
 License:	GPLv2 and LGPL-2.1+
 Group:		X11/Libraries
 Source0:	https://github.com/lxqt/obconf-qt/releases/download/%{version}/%{name}-%{version}.tar.xz
@@ -62,3 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/obconf-qt
 %{_desktopdir}/obconf-qt.desktop
 %{_iconsdir}/hicolor/48x48/apps/obconf-qt.png
+# needed for the lang files
+%dir /usr/share/obconf-qt
+%dir /usr/share/obconf-qt/translations
